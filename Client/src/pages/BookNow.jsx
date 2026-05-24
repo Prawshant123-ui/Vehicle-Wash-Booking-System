@@ -14,7 +14,7 @@ export default function BookNow() {
   const [preview, setPreview] = useState(null);
   const [form, setForm] = useState({
     offer: searchParams.get("offer") || "",
-    vehicleType: "car",
+    vehicleType: "Four wheeler",
     vehicleModel: "",
     vehicleNumber: "",
     washType: "mild",
@@ -97,7 +97,7 @@ export default function BookNow() {
           <div>
             <label className="block text-sm font-semibold text-gray-700 mb-2">Vehicle Type *</label>
             <div className="flex gap-3">
-              {["car", "bike"].map((t) => (
+              {["Four wheeler", "Two wheeler"].map((t) => (
                 <button
                   key={t}
                   type="button"

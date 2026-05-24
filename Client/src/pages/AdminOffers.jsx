@@ -4,7 +4,7 @@ import API from "../api/axios";
 import toast from "react-hot-toast";
 import { Plus, Pencil, Trash2, Tag, X, Loader2, Check, ToggleLeft, ToggleRight } from "lucide-react";
 
-const emptyForm = { title: "", description: "", price: "", vehicleType: "car", duration: "", isActive: true };
+const emptyForm = { title: "", description: "", price: "", vehicleType: "Four wheeler", duration: "", isActive: true };
 
 function OfferModal({ offer, onClose, onSave }) {
   const [form, setForm] = useState(offer || emptyForm);
