@@ -29,11 +29,16 @@ app.use(cors({
 app.use(apiLimiter);
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // Using routes as API
 app.use("/api/auth", authRoutes);
 app.use("/api/offers", offerRoutes);
 app.use("/api/bookings", bookingRoutes);
+
+app.use((req, res) => {
+  res.status(404).json({ message: "Route not found" });
+});
 
 // Server PORT
 const PORT = process.env.PORT || 5000;

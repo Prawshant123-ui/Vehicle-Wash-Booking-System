@@ -109,9 +109,29 @@ const updateBooking = async (req, res) => {
   }
 };
 
+//Delete booking 
+const deleteBooking = async (req, res) => {
+  try {
+    const booking = await Booking.findById(req.params.id);
+
+    if (!booking) {
+      return res.status(404).json({ message: "There's no such booking" });
+    }
+
+    await booking.deleteOne();
+
+    return res.json({ message: "Booking  deleted!!" });
+  } catch (error) {
+    return res.status(500).json({
+      message: error.message,
+    });
+  }
+};
+
 module.exports = {
   createBooking,
   getMyBookings: getUserBooking,
   getAllBookings: getAdminBooking,
-  updateBookingStatus: updateBooking
+  updateBookingStatus: updateBooking,
+  deleteBooking
 };

@@ -5,7 +5,8 @@ const {
   createBooking,
   getMyBookings,
   getAllBookings,
-  updateBookingStatus
+  updateBookingStatus,
+  deleteBooking
 } = require("../controllers/bookingController");
 
 const { protect } = require("../middlewares/authMiddleware");
@@ -38,5 +39,10 @@ router.put(
   adminOnly,
   updateBookingStatus
 );
+
+router.delete("/:id",
+   protect,
+    adminOnly,
+     deleteBooking);
 
 module.exports = router;
