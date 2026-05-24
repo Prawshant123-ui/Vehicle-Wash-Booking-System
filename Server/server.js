@@ -17,7 +17,7 @@ const app = express();
 app.use(cors({
   origin: [
     "http://localhost:3000",
-    "https://your-app-name.netlify.app" // ← add this after you get netlify URL
+    "https://washco.netlify.app" // ← add this after you get netlify URL
   ],
   credentials: true,
 }));
